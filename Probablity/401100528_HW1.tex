@@ -1,0 +1,125 @@
+\documentclass[12pt]{article}
+\usepackage{authblk} % Add the authblk package for author affiliations
+
+\title{Probablity Homework 1}
+\author{Amir Malekhosseini}
+\affil{Student id: 401100528}
+\affil{Department of Mathematical Science, Sharif University Of Technology}
+
+\begin{document}
+\maketitle
+
+\section*{Problem 1}
+We want to know the Probablit of sum 5.
+\newline The first we should do is to create the sample space for the problem.
+\newline We stop throwing only if the sum of two dices is 5 or 7
+it means that if we draw the desicion tree for this problem
+it will stop in some position(when sum 5 or 7 happens) or it will continue infinitly.
+\newline So the smaple space is:
+\newline $\Omega = \{(1,4),(4,1),(2,3),(3,2),(3,4),(4,3)(1,6),(6,1),(5,2),(2,5)\} $
+\newline We know that the sample space will happen because if we throw dices infinite times,
+the Probablity of not showing sum 5 or 7 is that every time the sum happens something else and then
+the Probablity is $ \liminf\frac{1}{n} $ and is zero.
+\newline So the Probablity of the sample space we wrote is 1. So we can limit or whole problem's sample space to $\Omega$
+(Because the 3 conditions for a Probablity sample space that is in book is correct for this $\Omega$ so we can accept it).
+\newline Now that we have chosen our limited sample space, for answering to problem we can easily count Probablity of showing sum 5, that is 4.
+\newline And our $\Omega$ had 10 members so the final Probablity is $\frac{4}{10}$.
+
+\section*{Problem 2}
+I claim that the Probablity is $\frac{1}{4}$.The prove is:
+\newline First thing we should notice is that the three pieces can form a triangle if and only if the triangle inequalities hold:
+\newline
+\begin{verbatim}
+    "The sum of the lengths of any two pieces must be
+    greater than the length of the third piece."
+\end{verbatim}
+
+We can write a desicion three and calculate the Probablity at each point.\
+\newline But the efficeint way is to use a geometary theorem that says:
+\begin{verbatim}
+    " If we have a 	Equilateral triangle ,
+    the distance of each point in the triangle to the triangle's sides 
+    is equal to height of the triangle "
+\end{verbatim}
+
+Because when we cut our first position(suppose i n) on the piece of wood, the
+first side of triangle we want to make will be showed and the sum of two others
+sides is $ 1 - n $. \newline So we can simulate the probelm to choosing a point
+in a Equilateral triangle with height 1 (wood height) and use the geometary
+theorem said earlier. \newline So we create a Equilateral triangle with height
+1 and mark its sides's middle points and connect them. \newline Base on another
+geometary theorem 4 equal triangles will be created. \newline If we pay
+attention to these triangles we see that each point we choose in middle
+triangle, it matches the condition we wanted to create a triangle with piece of
+wood(other 3 triangles don't satisfie the condition) and if we suppose that the
+point has distances a,b,c to sides, as the sum of a,b,c is 1(base on earlier
+theorem) and it satisfies the condition we wanted so we can choose the a,b,c as
+our disered points on the peice of wood and create a triangle with it.\newline
+So our sample space is $\Omega = \{$4 triangles with equal area$\}$,and we has
+the answer only if we choose a point in the middle triangle and because all
+triangles has equal area that is 1 out of 4, so the final Probablity is
+$\frac{1}{4}$ as claimed.
+
+\section*{Problem 3}
+For this problem we use the theorem that says $ \Pr[A] = 1 - \Pr[A'] $.
+And for calculate Probablity that none of S divides 3,
+we calculate Probablity that each S does divide 3,
+and then use the theorem to calculate the Probablity that each S doesn't divide 3,
+and because we want all these situations happen together, we multipy all Probablities .
+\newline We set Pr[$S_{n}$] = \{$S_{n} divides 3$ \}.
+\newline So base on the theorem Pr[$S'_{n}$] = 1 - Pr[$S_{n}$].
+\newline\newline $\Rightarrow 1 - \Pr[S_{1}] = 1 - \frac{\left\lfloor \frac{n}{3} \right\rfloor}{n}$
+\newline $\Rightarrow 1 - \Pr[S_{2}] = 1 - \frac{\left\lfloor \frac{n - 1}{3} \right\rfloor}{n - 1}$
+\newline $\Rightarrow \cdots$
+\newline $\Rightarrow \cdots$
+\newline $\Rightarrow 1 - \Pr[S_{n}] = 1 - 0 = 1$
+\newline \newline If we continue the calculation we can find each $\Pr[S'_{n}]$
+and for final answer we multipy them together.
+
+\section*{Problem 4}
+The last passenger wouldn't able to sit on his own sit if and only if it is not empty.
+It means that someone else has already sitten there.
+So we try to simulate the conditions by using a desicion tree.
+\newline For first passenger there is two conditions:
+\newline\newline 1- sits on his own sit with Probablity $ \frac{1}{200} $.
+\newline 2- sits on someone else's sit with Probablity $\frac{199}{200}$.
+\newline\newline If the first condition happens, all passengers will sit on their own sit as well as the last one.
+\newline But if the second condition happens, and suppose the first passenger sits on jth sit
+then all 2 to j-1th passengers will sit on their own sit and the jth passengers again has two situations:
+\newline\newline 1- Sit on first sit with Probablity $\frac{1}{200-(j-1)}$.
+\newline 2 Sit on another sit.
+\newline\newline Just like before if the first situation happens the last passenger will sit on his own sit
+and if not the desicion tree continues.
+\newline If we continue this method and sum Probablities(because there is "or" between situations)
+then we get to $\frac{1}{2}$ for the final answer.
+\newline It means the last passenger has $\frac{1}{2}$ to sit on his own sit.
+
+\section*{Problem 5}
+Like we have in context of the question, we set $A_{m}$
+as area with distance between $mr_{0}$ and $(m-1)r_{0}$.
+\newline Therefore we have:
+\newline $A_{m} = \{$points with $(m-1)r_{0}$ < d < $mr_{0}$$\}$
+        \newline Now we try to calculate each $A_{m}$:
+        \newline \newline $\Rightarrow A_{1} = \{$points with 0 < d < $r_{0}$$\}$
+    \newline $\Rightarrow A_{2} = \{$points with $r_{0}$ < d < $2r_{0}$$\}$
+    \newline $\Rightarrow\cdots$
+    \newline \newline Because we had a relationship between Probablities in context of question
+    therefore we can set $\Pr[A_{1}] = \alpha$ and write other Probablities base on $\alpha$.
+    \newline so we have:
+    \newline \newline $\Rightarrow A_{1}=\alpha, A_{2}= \frac{\alpha}{2}, \ldots$
+    \newline $\Rightarrow A_{1} + A_{2} + \ldots = 1 $
+    \newline $\Rightarrow \alpha = \frac{1}{2}$
+    \newline \newline Now we are going to calculate the Probablity of square:
+    \newline The square will be inside a circle with radius $2r_{0}$ (call it $S_{2}$).
+    \newline And also there is a circle with radius $r_{0}$ in the square(call it $S_{1}$).
+    \newline If we pay attention we see that these $S_{1} , S_{2}$ are $A_{1} , A_{2}$ that we calculated earlier.
+    \newline So base on these explainations if a shot wants to be inside the square
+    it is inside the $S_{1}$ 'or' inside the area between $S_{1}$ and the square.
+    \newline As we calculated $S_{1}$ before (it is eqaul to $\alpha$)
+    So for calculating the Probablity of shooting in square, all we need to do is
+    calculating Probablity of area between the $S_{1}$ and the square itself(by subtracting areas) and then sum it with $\alpha$.
+    \newline After calculating every area($S_{1}, S_{2}$, the square) the subtracted area is: $\frac{4-\pi}{3\pi}$
+    \newline So the Probablity that shot be inside area between $S_{1}$ and the square is: $ \frac{1}{4} * \frac{4-\pi}{3\pi}$
+    \newline \newline Therefore the fianl Probablity is: $ \frac{1}{2} + \frac{1}{4} * \frac{4-\pi}{3\pi} $
+
+\end{document}
