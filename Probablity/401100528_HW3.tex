@@ -1,0 +1,101 @@
+\documentclass[12pt]{article}
+\usepackage{authblk}
+
+\title{Probablity Homework 3}
+\author{Amir Malekhosseini}
+\affil{Student id: 401100528}
+\affil{Department of Mathematical Science, Sharif University Of Technology}
+
+\begin{document}
+\maketitle
+
+\section*{Problem 3}
+First we calculate the number of different areas in the city that is $ 400 $.
+\newline Now we can use binomial and Poisson random variable.
+\newline We can see that the Probablity that a specefic conflagaration in a chosen area is $ p = \frac{1}{400} $.
+\newline If we name has a conflagaration at month ,success, then X(number of conflagaration in a chosen area) is a binomial variable.
+\newline Because for $ k=400 $, $p = \frac{1}{k}$ is small and $\frac{n}{k}$ is not too large or small we can use Poisson random variable with $\lambda=np=\frac{n}{k}$ and n is $ 500 $. So we have:
+\newline \newline $\Rightarrow P(X=i)=\frac{\lambda^{i} * e^{-\lambda}}{i!}$
+\newline \newline For calculate at least one conflagaration each month we should calculate $P(X\neq 0)$.
+\newline  We know that $ P(X\neq  0)=1-P(X=0)$ .
+\newline \newline $\Rightarrow P(X\neq 0)=1 - e^{-\frac{n}{k}} = 1 - e^{-\frac{5}{4}} $
+
+\section*{Problem 5}
+\subsection*{A}
+If we suppose that X is variable that represents seconds both leaves until
+second i, it means that at second i , exactly one of them shoots or both of
+them shoot, therefore can calculate the probability mass function of X:
+\newline \newline
+
+$P(X=i) = \left\{ \begin{array}{cl}
+        g(i) & : \ i \geq 0  \\
+        0    & : \ elsewhere
+    \end{array} \right. $\newline \newline
+that $g(i)$ is equal to :
+\newline \newline $[(1-p)^{i-1}p *(1-q)^{i}] + [(1-q)^{i-1} q*(1-p)^{i}] + [(1-p)^{i-1}p * (1-q)^{i-1}q]$
+\newline \newline Now by formula  for calculating expectation value E[X] :
+\newline \newline $E[X]= \sum_{i=0}^{\infty } i * P(X=i)$
+\newline \newline So we will find $E[X]$:
+\newline \newline After calculation and use the formula $ \sum_{i=0}^{\infty }i*r^{i}=\frac{r}{(1-r)^{2}} $ we obtain the final value  $E[X] = \frac{1}{p-pq+q}$.
+\newline \newline \subsection*{B}
+The Probablity that both of them dies is that both shoot in same second.If we
+suppose that X is variable that represents seconds both leaves until second i
+,it means that at second i ,both of them will shoot. \newline So the
+probability mass function is: \newline \newline $P(X=i)=\left\{ \begin{array}{cl}
+        (1-p)^{i-1}p * (1-q)^{i-1}q & : \ i \geq 0  \\
+        0                           & : \ elsewhere
+    \end{array} \right.$\newline \newline
+Because `i' can be from 1 to $\infty$ we should sum up P(X) for all `i's:\newline \newline
+$\Rightarrow P(X) = \sum_{1}^{\infty } pq * ((1-p)(1-q))^{i-1}$.\newline \newline
+$\Rightarrow P(X) = pq \sum_{1}^{\infty }((1-p)(1-q))^{i-1} $\newline \newline
+$\Rightarrow P(X)=\frac{pq}{1-(1-p+pq-q)}=\frac{pq}{p-pq+q}$
+
+\section*{Problem 6} What the problem wants us to prove is equivalent to
+showing that the geometric is the only distribution on the positive integers
+with the memoryless property.It means that:\newline \newline If X be a discrete
+random variable with the set of possible values $\left\{ 1,2,\cdots \right\}$,
+if for all positive integers n and m, we have: \newline \newline (I): $P(X>n+m
+    | X>m)=P(X>n)$ \newline \newline then X is a geometric random variable. That
+is, there exists a number $0<p<1$ such that:\newline \newline $P (X = n) = p(1
+    - p)^{n-1}$ \newline \newline So we start prove that with induction. \newline
+First we use conditional probability formulas and break down the (I): \newline
+\newline (I) $\Rightarrow (II): P(X>n+m)=P(X>n)P(X>m) $ \newline Now we start
+proving by induction:(Suppose $P (X = 1) = p$) \newline Base case($n = 2$):
+\newline $(II) \Rightarrow P (X > 2) = P (X > 1)P (X > 1)$ \newline And we also
+know that $P(X>1) = 1 - P (X = 1) = 1 - p$ \newline \newline $\Rightarrow 1 - P
+    (X = 1) - P (X = 2) = (1 - p)^{2}$ \newline \newline $\Rightarrow P (X = 2) =
+    p(1 - p)$ \newline \newline So it is true for the base case. \newline Now we
+show that if it is true for n, it is true for (n + 1), too: \newline \newline
+Induction step: \newline From induction hypothesis we know that: \newline
+\newline $ P(X\le n)= \sum_{i=1}^{n}P(X=i) = \sum_{i=1}^{n} p(1-p)^{i-1} $
+\newline \newline If we calculate the experresion above we reach that: \newline
+\newline $\Rightarrow P(X\le n)= 1 - (1 - p)^{n} $ \newline \newline Now we use
+relation (II) to find $P(X = n + 1)$ : \newline \newline $\Rightarrow P (X > n
+    + 1) = P (X > n)P (X > 1)$ \newline \newline We know that $P(X>n)$ is equal to
+$1-P(X\le n)$ and $P (X > n - 1)$ is equal to $1-P(X\le n-1)$ that we can
+obtain from induction hypothesis. So the relation above is equal to: \newline
+\newline $\Rightarrow 1 - P (X\le n) - P (X = n + 1) = (1 - p)^{n}(1 - p). $
+\newline If we use value of $P(X\le n)$ that found earlier we obtain that:
+\newline \newline $\Rightarrow P (X = n + 1) = p(1 - p)^{n} $ \newline \newline
+Therefore we have showed that it is true for induction step, too. \newline So
+we have proved the problem.\newline \newline \newpage
+\section*{Problem 7}
+For solving this problem we will use negative binomial random variable with $p=\frac{1}{3}$
+because we have three queue and the desired car is in the first queue and each time we choose one of the queues
+with same probability.
+\newline And $r=10$ because we want the number of experiments until the 10th success occurs.
+\newline So we let X be a negative binomial random variable and represents the number of experiments until the 10th success occurs.
+\newline Then base on  these information we define our PMF as follows:
+\newline \newline $P(X=i) =\mathrm{C}_{9}^{i-1}(\frac{1}{3})^{10}(\frac{2}{3})^{i-10} $
+\newline \newline  where $\mathrm{C}_{n}^{k}$ denotes "the number of ways to choose k items out of n".
+\newline Now let's see what happens when we sum up all terms in the equation above.
+\newline We get:
+\newline \newline $\sum_{i=10}^{\infty } \mathrm{C}_{9}^{i-1}(\frac{1}{3})^{10}(1-p)^{i-10}$
+\newline \newline Therefore the equation above is the Probablity of entering desired car in the gas station.
+\newline Now lets calculate Var(X) and E(X):
+\newline Base on formula in the book we have:\newline \newline
+$Var(X) = \frac{r(1-p)}{p^{2}}$ and $E(X)=\frac{r}{p}$
+\newline \newline So the final value of Var(X) and  E(X) are:\newline \newline
+$E(X)=\frac{10}{(\frac{1}{3})} = 30$  and  $Var(X)=\frac{10(\frac{2}{3})}{(\frac{1}{3})^{2}}=7.5$
+
+\end{document}
