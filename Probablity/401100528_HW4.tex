@@ -1,0 +1,107 @@
+\documentclass[12pt]{article}
+\usepackage{authblk}
+
+\title{Probablity Homework 4}
+\author{Amir Malekhosseini}
+\affil{Student id: 401100528}
+\affil{Department of Mathematical Science, Sharif University Of Technology}
+\begin{document}
+\maketitle
+
+\section*{Problem 1}
+Let p be the probability that a randomly selected chip has lifetime less than $1.8 * 10^{6}$.
+\newline Now we suppose that X is the normal random variable with mean $1.4 * 10^{6} $ and standard deviation
+$3 * 10^{5}$.
+\newline Note that we should use the Lemma 7.1 in the book to  standardized X.
+\newline For calculating p we should calculate the probability that $P(X < 1.8 * 10^{6})$ so we have :
+\newline \newline $ p = P(X < 1.8 * 10^{6})
+    = P(\frac{X - 1.4*10^{6}}{3*10^{5}}<\frac{1.8*10^{6}-1.4*10^{6}}{3*10^{5}})
+    =P(\frac{X - 1.4*10^{6}}{3*10^{5}}<\frac{4}{3})$.
+\newline
+\newline $\Rightarrow P(Z<\frac{4}{3})=\Phi(\frac{4}{3})\simeq  0.9 = p $
+\newline \newline Now we calculate the probability of at least 20 out of 200 has this lifetime:
+\newline \newline $\Rightarrow \sum_{i=20}^{200} \mathrm{C}_{200}^{i} (0.9)^{i} (0.1)^{200-i}$
+\newline \newline Where $\mathrm{C}_{n}^{k}$ denotes "the number of ways to choose k items out of n".
+\newline \newline
+\section*{Problem 2}
+\subsection*{A}
+First we suppose that A is the fire station itself and X is the place we have
+fire. \newline Now base on formula in the book for probability density function
+of X we have: \newline \newline $f(t)= \left\{ \begin{array}{cl}
+        \frac{1}{A} & : \ 0\le t\le A \\
+        0           & : \ other
+    \end{array} \right.$
+\newline \newline So we now calculate $E(|X-a|)$:
+\newline Note that we know:
+\newline \newline $|X-a| = \left\{ \begin{array}{cl}
+        X-a & : \ a\le X\le A \\
+        a-X & : \ 0\le X\le a
+    \end{array} \right.$
+\newline \newline So we have base on formula for E(X):
+\newline \newline $E(|X-a|)=\int_{a}^{A} (X-a)f(t)dt +\int_{0}^{a} (a-X)f(t)dt=\frac{a^{2}-Aa+\frac{A^{2}}{2}}{A}$
+\newline \newline Also we know from the calcules that for finding min or max , we should Differentiating the equation and equal it to $0$.
+so we after doing the calculation we will find the min value of$E(|X-a|)$ is equal to $\frac{A}{2}$:
+\newline \newline $\Rightarrow \frac{d }{da}E(|X-a|)=\frac{2a}{A}-1+0 \Rightarrow \frac{2a}{A}=1 \Rightarrow a=\frac{A}{2}$
+\newline\newline And this is what we wanted.So the station should be at mid of the road.
+\newline
+\subsection*{B}
+Now we calculate it for infinite length: \newline As we have in the question,
+we can suppose that X is exponentially distributed with parameter $\lambda$. so
+for probability density function we have : \newline \newline $f(t) = \left\{ \begin{array}{cl}
+        \lambda e^{-\lambda t} & : \ t \geq 0 \\
+        0                      & : \ t < 0
+    \end{array} \right.$
+\newline \newline Now we do like what we did in part `A':
+\newline  \newline $E(|X-a|)=\int_{a}^{\infty } (X-a)f(t)dt +\int_{0}^{a} (a-X)f(t)dt$
+\newline \newline Just like part A, after differentiating the equation above and equal it to $0$ we get:\newline \newline
+$e^{\lambda a} = 2 \Rightarrow a=\frac{\log 2}{\lambda}$.
+\newline \newline So the station should be at point $\frac{\log 2}{\lambda}$.\newline \newline
+\section*{Problem 3}
+\subsection*{A}
+
+We know that the Poisson process is memoryless(because Each occurrence is
+independently of type ( i ) with probability ( $p_i$ )), and the probability of
+an occurrence being of type `i' is independent of other occurrences.\newline We
+also know that number of occurrences in a time interval follows a Poisson
+distribution with parameter $ \lambda $ means that: \newline $np=\lambda$
+\newline Because each occurrence is independently of type `i' with probability
+$p_i$ so if we donate $n_i$ for number of occurrences of `i', then we have:
+\newline \newline $n_i$ $= n$$p_i$ and $n=\frac{\lambda}{p}$ \newline \newline
+        So for prove what we wanted all we need to do is to show that:
+    $n_i$$p=\lambda$$p_i$ 
+\newline \newline $\Rightarrow$$n_i = $ $\frac{\lambda}{p}$$p_i$ $\Rightarrow$$n_i$$p=\lambda$$p_i$
+\newline \newline So we have proved that\newline "The number of occurrences of type `i' can be modeled as a Poisson process with rate  $\lambda p_i $"
+
+    \subsection*{B}
+
+    Let X be the time until 2000 th broken car is entered. We know that $\lambda =
+np$ for a Poisson process and in this process p is equal to $\frac{1}{10}$ and
+    n is 1300. So we obtain $\lambda=130$.\newline Now all we should do is to
+    calculate E(X) and Var(X) for a gamma random variable with parameters $r=2000$
+    and $\lambda=130$. \newline \newline Base on formulas in the book we obtain
+    that: \newline \newline $E(X)=\frac{r}{\lambda}$ and
+$Var(X)=\frac{r}{\lambda^{2}}$ \newline \newline $E(X)=\frac{2000}{130}\simeq
+15.4$ and $Var(X)= \frac{2000}{130*130}\simeq 0.12$.
+
+    \section*{Problem 6} For
+    distribution function F we know that: \newline \newline $F(t)=P(x\le t)$
+    \newline \newline If we want to prove that $F(X)=Y$ is uniform over (0, 1) we
+    should show this:\newline \newline $P(Y\le t) = \left\{ \begin{array}{cl}
+    t & : \ 0\le t \le 1 \\
+    1 & : \ t > 1        \\
+    0 & : \ t < 0
+\end{array} \right.$
+    \newline \newline \newline It is easy to show that $P(Y\le t)$ is equal to 1 for $t>1$ and is equal to 0 for $t<0$ because:\newline
+    \newline X is a function from `sample space' to $\Re$ and F is a function from $\Re$ to $[0,1]$.
+    \newline So F(X) is a function from `sample space' to $\Re$.
+    \newline \newline Now we try to prove last and final part:
+    \newline Base on F 's property from the book we know that inverse of F can't be empty and it also can have more than one element.
+    \newline So we difine $\alpha$ as follows:\newline
+$\Rightarrow a=\left\{ x | F(x)>t \right\} $
+    \newline \newline So we obtain that $F(\alpha)=t$. Also because we know that F is nondecreasing so we have:
+    \newline $x\le \alpha \Rightarrow F(x)\le F(\alpha)$ and $x\ge  \alpha \Rightarrow F(x)\ge  F(\alpha)$.
+    \newline \newline $\Rightarrow P(Y\le t) = P(X\le \alpha)$
+    \newline \newline And equation above is defenition of distribution function, therefore we get:
+    \newline \newline $\Rightarrow P(Y\le t) = F(\alpha)=t$
+    \newline \newline So we proved that $P(Y\le t)$ is equal to `t' for $0\le t \le 1$ therefore our prove is completed now.
+\end{document}
